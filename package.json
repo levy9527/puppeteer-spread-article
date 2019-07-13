@@ -1,0 +1,19 @@
+{
+  "name": "automated-article-distribution",
+  "version": "1.0.0",
+  "description": "🤖spread your yuque article to many blog platforms automatically with pupeteer",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "levy <levy9527@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^1.18.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
