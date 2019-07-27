@@ -43,7 +43,7 @@ module.exports = [
 	},
 	// 打开同一个页面，会显示上次内容
 	{
-		url: 'https://www.v2ex.com/new/blog',
+		//url: 'https://www.v2ex.com/new/blog',
 		selectorTitle: '#topic_title',
 		selectorContent: '#topic_content',
 		extraOperations: async (page) => {
@@ -111,7 +111,7 @@ module.exports = [
 		}
 	},
 	{
-		url: 'https://zhuanlan.zhihu.com/write',
+		//url: 'https://zhuanlan.zhihu.com/write',
 		selectorTitle: '.WriteIndex-titleInput .Input',
 		selectorContent: '.public-DraftEditor-content'
 	},
