@@ -83,7 +83,7 @@ module.exports = [
 	// 打开同一个页面，会显示上次内容
 	// 登录状态保持时间较短, 重新登录需要两次
 	{
-		url: 'https://blog.51cto.com/blogger/publish',
+		//url: 'https://blog.51cto.com/blogger/publish',
 		selectorTitle: '#title',
 		selectorContent: '.CodeMirror > div > textarea',
 		extraOperations: async (page) => {

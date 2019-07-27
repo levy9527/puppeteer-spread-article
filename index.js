@@ -77,9 +77,8 @@ if (!process.env.POST) {
 								  let el = document.querySelector(site.selectorContent)
 
 									// 🎩 I don't know WHY, but it works!
-									if (site.url.includes('51cto')) {
-									  el.focus()
-									}
+									// 51cto
+									el.focus()
 
 									if ('value' in el) el.value = content
 									else if (site.url.includes('csdn')) el.innerHTML = content
@@ -90,6 +89,11 @@ if (!process.env.POST) {
 								},
 							  {site, content}
 							)
+
+							// 🎩 I don't know WHY, but it works!
+							if (site.url.includes('juejin')) {
+						    await page.type(site.selectorContent, 'Space')
+							}
 
 							// 掘金只能通过键盘事件
 						//	if (site.url.includes('juejin'))
