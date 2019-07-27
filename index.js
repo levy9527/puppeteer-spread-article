@@ -82,10 +82,9 @@ if (!process.env.POST) {
 
 									if ('value' in el) el.value = content
 									else if (site.url.includes('csdn')) el.innerHTML = content
+									else if (site.url.includes('medium')) el.innerText = '\n' + content
 									else el.innerText = content
 
-									if (site.url.includes('medium'))
-									  el.innerText = '\n'
 								},
 							  {site, content}
 							)
@@ -95,9 +94,6 @@ if (!process.env.POST) {
 						    await page.type(site.selectorContent, 'Space')
 							}
 
-							// 掘金只能通过键盘事件
-						//	if (site.url.includes('juejin'))
-						 //   await page.type(site.selectorContent, content)
 						}
 
 						site.extraOperations && await site.extraOperations(page)
