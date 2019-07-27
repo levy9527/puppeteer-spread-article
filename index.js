@@ -54,6 +54,8 @@ if (!process.env.POST) {
 						  await page.click('._2cVn3')
 							await page.waitFor(3000)
 						}
+
+						site.beforeWriting && await site.beforeWriting(page)
 			   
 						if (site.selectorTitle) {
 							await page.evaluate(

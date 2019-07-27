@@ -17,6 +17,34 @@ module.exports = [
 		  await page.click('#showReward')
 		}
 	},
+	{
+	  url: 'https://forum.vuejs.org/c/chinese',
+		selectorTitle: '#reply-title',
+		selectorContent: '.ember-text-area',
+		beforeWriting: async (page) => {
+			const btnLogin = '.login-button'
+			const btnGithub = '.btn-social.github'
+
+			try {
+			  // 登录
+			  await page.waitForSelector(btnLogin, {timeout: 100})
+        await page.click(btnLogin)
+
+				// 使用 github 账号
+        await page.waitForSelector(btnGithub, {timeout: 500})
+        await page.click(btnGithub)
+
+        await page.waitFor(3000)
+			} catch (e) {
+				console.log('forum.vuejs: no need to login')
+			} finally {
+				await page.click('#create-topic')
+				await page.waitFor(500)
+
+				//await page.click('.toggle-fullscreen')
+			}
+		}
+	},
 	// 有时图片会上传失败
 	{
 		url: 'https://github.com/levy9527/blog/issues/new',
