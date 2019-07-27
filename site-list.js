@@ -67,16 +67,10 @@ module.exports = [
 			await page.click('#Editor_Edit_APOptions_APSiteHome_cbIsPublishToSiteHome')
 		}
 	},
-	// 登录状态保持时间较短
-  {
-		url: 'https://juejin.im/editor/drafts/new',
-		selectorTitle: '.title-input',
-		selectorContent: '.ace_text-input',
-	},
 	// 打开同一个页面，会显示上次内容
 	// 登录状态保持较短, 重新登录要尝试两次以上
 	{
-		url: 'https://mp.csdn.net/mdeditor?not_checkout=0#',
+		//url: 'https://mp.csdn.net/mdeditor?not_checkout=0#',
 		selectorTitle: '.article-bar__title--input',
 		selectorContent: '.editor__inner',
 		extraOperations: async (page) => {
@@ -85,6 +79,12 @@ module.exports = [
 			//await page.waitForSelector(selectorHand)
 			//await page.click(selectorHand)
 		}
+	},
+	// 登录状态保持时间较短
+  {
+		url: 'https://juejin.im/editor/drafts/new',
+		selectorTitle: '.title-input',
+		selectorContent: '.ace_text-input',
 	},
 	// 打开同一个页面，会显示上次内容
 	// 登录状态保持时间较短, 重新登录需要两次

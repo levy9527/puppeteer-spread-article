@@ -71,11 +71,12 @@ if (!process.env.POST) {
 						}
 
 						if (site.selectorContent) {
-						  // 清空上次输入
+
 							await page.evaluate(
 							  ({site, content}) => {
 								  let el = document.querySelector(site.selectorContent)
 									if ('value' in el) el.value = content
+									else if (site.url.includes('csdn')) el.innerHTML = content
 									else el.innerText = content
 
 									if (site.url.includes('medium'))
