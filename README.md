@@ -45,6 +45,16 @@ mkdir user-dir
 POST=https://www.yuque.com/your-link node index.js
 ```
 
+## 最佳实践
+`site-list.js` 里默认是注释掉 知乎 与 Medium 的，这是出于实践考虑。
+
+首先，这两个网站使用工具生成的内容样式并不理想。
+
+其次，知乎 与 Medium 都是可以开通专栏，所以会有 编辑(editor) 与 作者(writer) 两种角色，推荐这两个网站让 作者 手工发布文章：
+
+- 知乎：先把语雀文档以 .md 形式导出到本地，再从本地导入到知乎，手工调整样式
+- Medium：复制语雀整篇文档，再粘贴到 Medium
+
 ## Notice
 
 ### 样式问题
@@ -56,10 +66,6 @@ POST=https://www.yuque.com/your-link node index.js
 - yaml/sh等内容有缩进, 这样会造成缩进混乱
 
 解决方案：把以上内容变成图片。对最后一点，如果只有一层缩进，也可以把缩进消除，达到格式不错乱的目的
-
-另外，知乎与Medium可能会出现这种情况：只要出现代码块，后面的内容就全在代码里了
-
-知乎可以通过可以导入文档来解决此问题; Medium可以通过复制/粘贴来解决此问题
 
 ### 网站特点
 
@@ -76,7 +82,7 @@ POST=https://www.yuque.com/your-link node index.js
 
 
 ## Links
-- [puppeteer docs](https://pptr.dev/#?product=Puppeteer&version=v1.17.0&show=outline)
+- [puppeteer docs](https://pptr.dev/)
 
 ## License
 [MIT](LICENSE)
