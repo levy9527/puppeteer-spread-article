@@ -8,31 +8,28 @@
 // 总结：以下网站中知乎的markdown解析器是最差的， medium也一样，只要出现代码块，后面的内容就全在代码里出不来了
 // 另：知乎可以导入文档; 但不能显示在线图片，也即![]()语法无效。
 module.exports = [
-	// 登录状态保持时间较短, 重新登录需要两次
-	// 打开同一个页面，会显示上次内容
+	// 登录状态保持时间较短, 有时可能需要重新登录两次
 	{
-		//url: 'https://hacpai.com/post?type=0',
+		url: 'https://hacpai.com/post?type=0',
 		selectorTitle: '#articleTitle',
 		selectorContent: '.vditor-textarea',
 		extraOperations: async (page) => {
 		  await page.click('#showReward')
 		}
 	},
-	// 打开同一个页面，会显示上次内容
-	// github的问题在于，有时图片会上传失败
+	// 有时图片会上传失败
 	{
-		//url: 'https://github.com/levy9527/blog/issues/new',
+		url: 'https://github.com/levy9527/blog/issues/new',
 		selectorTitle: '#issue_title',
 		selectorContent: '#issue_body'
 	},
-	// 打开同一个页面，会显示上次内容
 	{
-		//url: 'https://segmentfault.com/write?freshman=1',
+		url: 'https://segmentfault.com/write?freshman=1',
 		selectorTitle: '#myTitle',
 		selectorContent: '#myEditor',
 	},
 	{
-		//url: 'https://my.oschina.net/u/2414419/blog/write',
+		url: 'https://my.oschina.net/u/2414419/blog/write',
 		selectorTitle: 'input[name=title]',
 		selectorContent: '.CodeMirror-wrap textarea',
 		extraOperations: async (page) => {
@@ -41,9 +38,8 @@ module.exports = [
 			await page.click('.selection.visible .menu.visible .item:nth-child(2)')
 		}
 	},
-	// 打开同一个页面，会显示上次内容
 	{
-		//url: 'https://www.v2ex.com/new/blog',
+		url: 'https://www.v2ex.com/new/blog',
 		selectorTitle: '#topic_title',
 		selectorContent: '#topic_content',
 		extraOperations: async (page) => {
@@ -53,13 +49,13 @@ module.exports = [
 		}
 	},
 	{
-		//url: 'https://www.jianshu.com/writer#/notebooks/26371741/notes/50149419',
+		url: 'https://www.jianshu.com/writer#/notebooks/26371741/notes/50149419',
 		selectorTitle: '._24i7u',
 		selectorContent: '#arthur-editor',
 	},
 	// 无法预览
 	{
-		//url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
+		url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
 		selectorTitle: '#Editor_Edit_txbTitle',
 		selectorContent: '#Editor_Edit_EditorBody',
 		extraOperations: async (page) => {
@@ -67,10 +63,9 @@ module.exports = [
 			await page.click('#Editor_Edit_APOptions_APSiteHome_cbIsPublishToSiteHome')
 		}
 	},
-	// 打开同一个页面，会显示上次内容
-	// 登录状态保持较短, 重新登录要尝试两次以上
+	// 登录状态保持时间较短, 有时可能需要重新登录两次
 	{
-		//url: 'https://mp.csdn.net/mdeditor?not_checkout=0#',
+		url: 'https://mp.csdn.net/mdeditor?not_checkout=0#',
 		selectorTitle: '.article-bar__title--input',
 		selectorContent: '.editor__inner',
 		extraOperations: async (page) => {
@@ -80,10 +75,9 @@ module.exports = [
 			//await page.click(selectorHand)
 		}
 	},
-	// 打开同一个页面，会显示上次内容
-	// 登录状态保持时间较短, 重新登录需要两次
+	// 登录状态保持时间较短, 有时可能需要重新登录两次
 	{
-		//url: 'https://blog.51cto.com/blogger/publish',
+		url: 'https://blog.51cto.com/blogger/publish',
 		selectorTitle: '#title',
 		selectorContent: '.CodeMirror > div > textarea',
 		extraOperations: async (page) => {
@@ -121,7 +115,6 @@ module.exports = [
 		selectorContent: '.public-DraftEditor-content'
 	},
 	{
-		// 类似知乎，原因不明
 	  //url: 'https://medium.com/new-story',
 		selectorTitle: '.graf--title',
 		selectorContent: '.section-inner > p',
