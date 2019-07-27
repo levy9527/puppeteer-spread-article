@@ -46,15 +46,20 @@ module.exports = [
 		url: 'https://www.v2ex.com/new/blog',
 		selectorTitle: '#topic_title',
 		selectorContent: '#topic_content',
+		extraOperations: async (page) => {
+		  await page.click('#select_syntaxSelectBoxIt')
+		  await page.waitForSelector('#select_syntaxSelectBoxItOptions')
+		  await page.click('.selectboxit-option-last')
+		}
 	},
 	{
-		url: 'https://www.jianshu.com/writer#/notebooks/26371741/notes/50149419',
+		//url: 'https://www.jianshu.com/writer#/notebooks/26371741/notes/50149419',
 		selectorTitle: '._24i7u',
 		selectorContent: '#arthur-editor',
 	},
 	// 无法预览
 	{
-		url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
+		//url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
 		selectorTitle: '#Editor_Edit_txbTitle',
 		selectorContent: '#Editor_Edit_EditorBody',
 		extraOperations: async (page) => {

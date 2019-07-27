@@ -84,10 +84,12 @@ if (!process.env.POST) {
 							  {site, content}
 							)
 
-							//await page.type(site.selectorContent, content)
+							// 掘金只能通过键盘事件
+						//	if (site.url.includes('juejin'))
+						 //   await page.type(site.selectorContent, content)
 						}
 
-						site.extraOperations && await site.extraOperations(page, title)
+						site.extraOperations && await site.extraOperations(page)
 					}))
 			   
 					Promise.all(promiseList)
