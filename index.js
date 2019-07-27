@@ -75,6 +75,12 @@ if (!process.env.POST) {
 							await page.evaluate(
 							  ({site, content}) => {
 								  let el = document.querySelector(site.selectorContent)
+
+									// 🎩 I don't know WHY, but it works!
+									if (site.url.includes('51cto')) {
+									  el.focus()
+									}
+
 									if ('value' in el) el.value = content
 									else if (site.url.includes('csdn')) el.innerHTML = content
 									else el.innerText = content

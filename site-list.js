@@ -80,12 +80,6 @@ module.exports = [
 			//await page.click(selectorHand)
 		}
 	},
-	// 登录状态保持时间较短
-  {
-		url: 'https://juejin.im/editor/drafts/new',
-		selectorTitle: '.title-input',
-		selectorContent: '.ace_text-input',
-	},
 	// 打开同一个页面，会显示上次内容
 	// 登录状态保持时间较短, 重新登录需要两次
 	{
@@ -93,15 +87,20 @@ module.exports = [
 		selectorTitle: '#title',
 		selectorContent: '.CodeMirror > div > textarea',
 		extraOperations: async (page) => {
+		  await page.waitFor(100)
+
+			// 选择原创
 			await page.hover('.pulldown-title')
 			await page.waitForSelector('.pulldown-title.on')
 			await page.click('.pulldown-title .pulldown-list li:first-child')
 
+			// 选择一级分类
 			await page.hover('.system-one')
 			await page.waitForSelector('.system-one.on')
 			await page.click('#system-one-list li:nth-child(5)')
 
-			await page.waitFor(500)
+			// 选择二级分类
+			await page.waitFor(1000)
 			await page.hover('.system-two')
 			await page.waitForSelector('.system-two.on')
 			await page.click('#system-two-list li:nth-child(5)')
@@ -109,6 +108,12 @@ module.exports = [
 			// 以防外一：出现按钮看不见的情况
 			// await page.click('#submit')
 		}
+	},
+	// 登录状态保持时间较短
+  {
+		url: 'https://juejin.im/editor/drafts/new',
+		selectorTitle: '.title-input',
+		selectorContent: '.ace_text-input',
 	},
 	{
 		//url: 'https://zhuanlan.zhihu.com/write',
