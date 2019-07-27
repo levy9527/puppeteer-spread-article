@@ -73,18 +73,18 @@ if (!process.env.POST) {
 						if (site.selectorContent) {
 						  // 清空上次输入
 							await page.evaluate(
-							  ({site}) => {
+							  ({site, content}) => {
 								  let el = document.querySelector(site.selectorContent)
-									if ('value' in el) el.value = ''
-									else el.innerText = ''
+									if ('value' in el) el.value = content
+									else el.innerText = content
 
 									if (site.url.includes('medium'))
 									  el.innerText = '\n'
 								},
-							  {site}
+							  {site, content}
 							)
 
-							await page.type(site.selectorContent, content)
+							//await page.type(site.selectorContent, content)
 						}
 
 						site.extraOperations && await site.extraOperations(page, title)

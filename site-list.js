@@ -11,7 +11,7 @@ module.exports = [
 	// 登录状态保持时间较短, 重新登录需要两次
 	// 打开同一个页面，会显示上次内容
 	{
-		url: 'https://hacpai.com/post?type=0',
+		//url: 'https://hacpai.com/post?type=0',
 		selectorTitle: '#articleTitle',
 		selectorContent: '.vditor-textarea',
 		extraOperations: async (page) => {
@@ -21,18 +21,18 @@ module.exports = [
 	// 打开同一个页面，会显示上次内容
 	// github的问题在于，有时图片会上传失败
 	{
-		url: 'https://github.com/levy9527/blog/issues/new',
+		//url: 'https://github.com/levy9527/blog/issues/new',
 		selectorTitle: '#issue_title',
 		selectorContent: '#issue_body'
 	},
 	// 打开同一个页面，会显示上次内容
 	{
-		url: 'https://segmentfault.com/write?freshman=1',
+		//url: 'https://segmentfault.com/write?freshman=1',
 		selectorTitle: '#myTitle',
 		selectorContent: '#myEditor',
 	},
 	{
-		url: 'https://my.oschina.net/u/2414419/blog/write',
+		//url: 'https://my.oschina.net/u/2414419/blog/write',
 		selectorTitle: 'input[name=title]',
 		selectorContent: '.CodeMirror-wrap textarea',
 		extraOperations: async (page) => {
@@ -40,12 +40,6 @@ module.exports = [
 			await page.waitForSelector('.selection.visible .menu.visible .item')
 			await page.click('.selection.visible .menu.visible .item:nth-child(2)')
 		}
-	},
-	// 登录状态保持时间较短
-  {
-		url: 'https://juejin.im/editor/drafts/new',
-		selectorTitle: '.title-input',
-		selectorContent: '.ace_text-input',
 	},
 	// 打开同一个页面，会显示上次内容
 	{
@@ -58,6 +52,22 @@ module.exports = [
 		selectorTitle: '._24i7u',
 		selectorContent: '#arthur-editor',
 	},
+	// 无法预览
+	{
+		url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
+		selectorTitle: '#Editor_Edit_txbTitle',
+		selectorContent: '#Editor_Edit_EditorBody',
+		extraOperations: async (page) => {
+			await page.click('#Editor_Edit_APOptions_Advancedpanel1_cklCategories_0')
+			await page.click('#Editor_Edit_APOptions_APSiteHome_cbIsPublishToSiteHome')
+		}
+	},
+	// 登录状态保持时间较短
+  {
+		url: 'https://juejin.im/editor/drafts/new',
+		selectorTitle: '.title-input',
+		selectorContent: '.ace_text-input',
+	},
 	// 打开同一个页面，会显示上次内容
 	// 登录状态保持较短, 重新登录要尝试两次以上
 	{
@@ -69,16 +79,6 @@ module.exports = [
 			//const selectorHand = '.middle-hand > button'
 			//await page.waitForSelector(selectorHand)
 			//await page.click(selectorHand)
-		}
-	},
-	// 无法预览
-	{
-		url: 'https://i.cnblogs.com/EditPosts.aspx?opt=1',
-		selectorTitle: '#Editor_Edit_txbTitle',
-		selectorContent: '#Editor_Edit_EditorBody',
-		extraOperations: async (page) => {
-			await page.click('#Editor_Edit_APOptions_Advancedpanel1_cklCategories_0')
-			await page.click('#Editor_Edit_APOptions_APSiteHome_cbIsPublishToSiteHome')
 		}
 	},
 	// 打开同一个页面，会显示上次内容
@@ -112,7 +112,7 @@ module.exports = [
 	},
 	{
 		// 类似知乎，原因不明
-	  url: 'https://medium.com/new-story',
+	  //url: 'https://medium.com/new-story',
 		selectorTitle: '.graf--title',
 		selectorContent: '.section-inner > p',
 	}
