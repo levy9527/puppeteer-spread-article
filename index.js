@@ -42,9 +42,7 @@ if (!process.env.POST) {
 
 				  //console.log(content)
 			   
-				  let promiseList = siteList.map(site => browser.newPage().then(async page => {
-					  if (!site.url) return
-			   
+				  let promiseList = siteList.filter(site => site.url).map(site => browser.newPage().then(async page => {
 					  await page.setViewport({ width: 1280, height: 800 })
 					  await page.goto(site.url, {waitUntil:'networkidle0'})
 
