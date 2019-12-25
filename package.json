@@ -1,5 +1,5 @@
 {
-  "name": "automated-article-distribution",
+  "name": "puppeteer-spread-article",
   "version": "1.0.0",
   "description": "🤖spread your yuque article to many blog platforms automatically with pupeteer",
   "main": "index.js",
