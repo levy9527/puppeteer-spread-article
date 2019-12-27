@@ -3,6 +3,7 @@ const {
   dropTitle,
   dropAnchor,
   replaceBrWithNewline,
+  processImg,
   getYuqueSlug
 } = require('./utils')
 const siteList = require('./site-list')
@@ -48,7 +49,9 @@ if (!process.env.POST) {
           let {
             data: {title, sourcecode}
           } = await resp.json()
-          let content = replaceBrWithNewline(dropAnchor(dropTitle(sourcecode)))
+          let content = processImg(
+            replaceBrWithNewline(dropAnchor(dropTitle(sourcecode)))
+          )
 
           //console.log(content)
 
