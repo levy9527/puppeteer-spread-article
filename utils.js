@@ -3,7 +3,7 @@ function dropTitle(content) {
 }
 
 function dropAnchor(content) {
-  return content.replace(/<a.+<\/a>\n/g, '')
+  return content.replace(/<a.+<\/a>\n/g, '\n')
 }
 
 function replaceBrWithNewline(content) {
