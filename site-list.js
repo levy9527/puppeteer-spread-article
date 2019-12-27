@@ -10,7 +10,7 @@
 module.exports = [
   // 登录状态保持时间较短, 有时可能需要重新登录两次
   {
-    url: 'https://hacpai.com/post?type=0',
+    //url: 'https://hacpai.com/post?type=0',
     selectorTitle: '#articleTitle',
     selectorContent: '.vditor-textarea',
     beforeWriting: async page => {
@@ -68,9 +68,9 @@ module.exports = [
     selectorContent: '#issue_body'
   },
   {
-    //url: 'https://segmentfault.com/write?freshman=1',
-    selectorTitle: '#myTitle',
-    selectorContent: '#myEditor'
+    url: 'https://segmentfault.com/write?freshman=1',
+    selectorTitle: '#title',
+    selectorContent: '.CodeMirror-wrap textarea'
   },
   {
     //url: 'https://my.oschina.net/u/2414419/blog/write',

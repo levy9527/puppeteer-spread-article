@@ -11,10 +11,11 @@ function replaceBrWithNewline(content) {
 }
 
 function processImg(content) {
-  return content.replace(
-    /!\[\S*\]\((.*?)\)/g,
-    '<img src="$1" referrerpolicy="no-referrer">'
-  )
+  return content
+  //return content.replace(
+  //  /!\[\S*\]\((.*?)\)/g,
+  //  '<img src="$1" referrerpolicy="no-referrer">'
+  //)
 }
 
 function getYuqueSlug(url) {
